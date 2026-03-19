@@ -1,0 +1,45 @@
+{
+  "name": "alexander-domanov-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website built with vanilla HTML, CSS, SCSS, and JavaScript",
+  "main": "index.js",
+  "keywords": [
+    "portfolio",
+    "html",
+    "css",
+    "scss",
+    "javascript",
+    "vanilla-js"
+  ],
+  "author": "Alexander domanov <alexanderdomanov.dev@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "htmlhint": "^1.8.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.4",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "stylelint-order": "^7.0.1"
+  },
+  "scripts": {
+    "lint:js": "eslint . --ext .js --fix",
+    "lint:css": "stylelint '**/*.{css,scss}' --fix",
+    "lint:html": "htmlhint '**/*.html'",
+    "lint:prettier": "prettier --check .",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html && npm run lint:prettier",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,scss,html,json,md}\"",
+    "test": "echo \"No tests yet\"",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --fix",
+    "*.{css,scss}": "stylelint --fix",
+    "*.{js,jsx,ts,tsx,css,scss,html,json,md}": "prettier --write"
+  }
+}
