@@ -3,12 +3,328 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO и социальные сети -->
+    <meta
+      name="description"
+      content="Alexander Domanov - Frontend Developer specializing in modern web technologies. View my portfolio and projects."
+    />
+    <meta
+      name="keywords"
+      content="frontend developer, web developer, JavaScript, React, portfolio"
+    />
+    <meta name="author" content="Alexander Domanov" />
+
+    <!-- Open Graph (социальные сети) -->
+    <meta property="og:title" content="Alexander Domanov | Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Frontend Developer specializing in modern web technologies"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yoursite.com" />
+    <meta property="og:image" content="https://yoursite.com/images/og-image.jpg" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alexander Domanov | Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Frontend Developer specializing in modern web technologies"
+    />
+    <meta name="twitter:image" content="https://yoursite.com/images/twitter-image.jpg" />
+
+    <!-- Theme и favicon -->
+    <meta name="theme-color" content="#your-brand-color" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
     <link rel="stylesheet" href="/styles/main.css" />
     <title>Alexander Domanov | Frontend Developer</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header>
+      <h2>AD</h2>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="home">
+        <h1>Hi, I'm Alexander</h1>
+        <p>
+          I'm a frontend developer with a passion for creating beautiful and functional websites.
+        </p>
+
+        <div>
+          <a href="#projects">View My Work</a>
+          <a href="#">Download Resume</a>
+        </div>
+
+        <nav aria-label="Social Links">
+          <ul>
+            <li>
+              <a href="https://github.com/Alexander-Domanov" aria-label="My GitHub Profile">
+                GITHUB
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/alexander-domanov/"
+                aria-label="My LinkedIn Profile"
+              >
+                LINKEDIN
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/Alex_Domanov" aria-label="My Twitter Profile">TWITTER</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div>
+          <img
+            src="https://kvadrat.az/uploads/articles/674e1265b3251.png.pagespeed.ce.3mKpWAdOZr.png"
+            alt="Alexander Domanov - Frontend Developer"
+            width="384"
+            height="384"
+          />
+          <div class="floating-skills">
+            <span>React</span>
+            <span>Next.JS</span>
+            <span>TypeScript</span>
+          </div>
+        </div>
+
+        <span>
+          <span>5+</span>
+          <span>Years</span>
+        </span>
+        <span>|</span>
+        <span>
+          <span>10+</span>
+          <span>Projects</span>
+        </span>
+      </section>
+
+      <section id="about">
+        <h2>ABOUT ME</h2>
+        <div>
+          <h3>I build digital products that bridge the gap between complexity and clarity.</h3>
+          <p>
+            Focused on creating high-performance full-stack applications with a heavy emphasis on
+            design systems and user experience. My philosophy is rooted in the "Digital Curator"
+            mindset—treating every line of code as a brushstroke in a larger masterpiece.
+          </p>
+        </div>
+        <div>
+          <div>
+            <svg aria-hidden="true">Icon</svg>
+            <h4>Core Philosophy</h4>
+            <p>
+              Clean code, scalable architecture, and pixel-perfect execution are non-negotiable
+              standards for every project.
+            </p>
+          </div>
+
+          <div>
+            <svg aria-hidden="true">Icon</svg>
+            <h4>99% Score</h4>
+            <p>Average lighthouse performance on all delivered production apps.</p>
+          </div>
+
+          <div>
+            <svg aria-hidden="true">Icon</svg>
+            <h4>Impact-Driven</h4>
+            <p>Products built to scale from MVP to millions of active users.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>EXPERTISE</h2>
+        <h3>Technical Arsenal</h3>
+        <p>Constantly evolving with the modern web ecosystem.</p>
+        <div>
+          <div>
+            <h4>Frontend</h4>
+            <ul>
+              <li>React</li>
+              <li>Next.JS</li>
+              <li>TypeScript</li>
+              <li>Tailwind CSS</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Backend</h4>
+            <ul>
+              <li>NodeJS</li>
+              <li>GraphQL</li>
+              <li>Prisma</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Design & DevOps</h4>
+            <ul>
+              <li>Figma</li>
+              <li>Docker</li>
+              <li>AWS</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>WORKS</h2>
+        <h3>SELECTED PROJECTS</h3>
+        <article>
+          <img
+            src="https://kvadrat.az/uploads/articles/674e1265b3251.png.pagespeed.ce.3mKpWAdOZr.png"
+            width="384"
+            height="384"
+            alt=""
+          />
+          <h4>Nova CRM</h4>
+          <p>A minimalist customer relationship tool with focus on sales velocity.</p>
+          <div>
+            <a href="https://github.com/username/nova-crm" aria-label="View Nova CRM on GitHub">
+              <svg aria-hidden="true">GITHUB ICON</svg>
+            </a>
+            <a href="https://nova-crm.demo.com" aria-label="View Nova CRM project">
+              <svg aria-hidden="true">VIEW PROJECT ICON</svg>
+            </a>
+          </div>
+        </article>
+        <article>
+          <img
+            src="https://kvadrat.az/uploads/articles/674e1265b3251.png.pagespeed.ce.3mKpWAdOZr.png"
+            width="384"
+            height="384"
+            alt=""
+          />
+          <h4>Nova CRM</h4>
+          <p>A minimalist customer relationship tool with a focus on sales velocity.</p>
+          <div>
+            <a href="https://github.com/username/nova-crm" aria-label="View Nova CRM on GitHub">
+              <svg aria-hidden="true">GITHUB ICON</svg>
+            </a>
+            <a href="https://nova-crm.demo.com" aria-label="View Nova CRM project">
+              <svg aria-hidden="true">VIEW PROJECT ICON</svg>
+            </a>
+          </div>
+        </article>
+        <article>
+          <img
+            src="https://kvadrat.az/uploads/articles/674e1265b3251.png.pagespeed.ce.3mKpWAdOZr.png"
+            width="384"
+            height="384"
+            alt=""
+          />
+          <h4>Nova CRM</h4>
+          <p>A minimalist customer relationship tool with a focus on sales velocity.</p>
+          <div>
+            <a href="https://github.com/username/nova-crm" aria-label="View Nova CRM on GitHub">
+              <svg aria-hidden="true">GITHUB ICON</svg>
+            </a>
+            <a href="https://nova-crm.demo.com" aria-label="View Nova CRM project">
+              <svg aria-hidden="true">VIEW PROJECT ICON</svg>
+            </a>
+          </div>
+        </article>
+        <article>
+          <img
+            src="https://kvadrat.az/uploads/articles/674e1265b3251.png.pagespeed.ce.3mKpWAdOZr.png"
+            width="384"
+            height="384"
+            alt=""
+          />
+          <h4>Nova CRM</h4>
+          <p>A minimalist customer relationship tool with a focus on sales velocity.</p>
+          <div>
+            <a href="https://github.com/username/nova-crm" aria-label="View Nova CRM on GitHub">
+              <svg aria-hidden="true">GITHUB ICON</svg>
+            </a>
+            <a href="https://nova-crm.demo.com" aria-label="View Nova CRM project">
+              <svg aria-hidden="true">VIEW PROJECT ICON</svg>
+            </a>
+          </div>
+        </article>
+        <article>
+          <img
+            src="https://kvadrat.az/uploads/articles/674e1265b3251.png.pagespeed.ce.3mKpWAdOZr.png"
+            width="384"
+            height="384"
+            alt=""
+          />
+          <h4>Nova CRM</h4>
+          <p>A minimalist customer relationship tool with focus on sales velocity.</p>
+          <div>
+            <a href="https://github.com/username/nova-crm" aria-label="View Nova CRM on GitHub">
+              <svg aria-hidden="true">GITHUB ICON</svg>
+            </a>
+            <a href="https://nova-crm.demo.com" aria-label="View Nova CRM project">
+              <svg aria-hidden="true">VIEW PROJECT ICON</svg>
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <section id="contact">
+        <h2>CONTACT</h2>
+        <h3>Let's discuss your next project.</h3>
+        <div>
+          <svg aria-hidden="true">ICON</svg>
+          <p>Email me</p>
+          <p><a href="mailto:alexanderdomanov.dev@gmail.com">alexanderdomanov.dev@gmail.com</a></p>
+        </div>
+        <div>
+          <svg aria-hidden="true">ICON</svg>
+          <p>Location</p>
+          <p>San Francisco, Ca / Remote</p>
+        </div>
+        <form>
+          <fieldset>
+            <legend>Contact Form</legend>
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Name" required />
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Email" required />
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Message" required></textarea>
+            <input type="checkbox" id="checkbox" required />
+            <label for="checkbox">I'M NOT A ROBOT</label>
+            <button>SEND MESSAGE</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <h2>AD</h2>
+      <small>&copy; Copyright 2026 Alexander Domanov</small>
+      <nav aria-label="Social Links">
+        <ul>
+          <li>
+            <a href="https://github.com/Alexander-Domanov" aria-label="My GitHub Profile">GITHUB</a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/alexander-domanov/"
+              aria-label="My LinkedIn Profile"
+            >
+              LINKEDIN
+            </a>
+          </li>
+          <li><a href="https://x.com/Alex_Domanov" aria-label="My Twitter Profile">TWITTER</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
