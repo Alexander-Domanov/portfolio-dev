@@ -22,3 +22,34 @@ window.addEventListener('scroll', () => {
 
   lastScroll = current;
 });
+
+const words = [
+  "Front-End Developer",
+  "React / Next.js Developer",
+  "Problem Solver",
+  "UI/UX Integration"
+];
+
+const dynamicText = document.querySelector(".dynamic-text");
+let index = 0;
+
+function changeWord() {
+  // анимация исчезания
+  dynamicText.style.opacity = 0;
+  dynamicText.style.transform = "translateY(-10px)";
+
+  setTimeout(() => {
+    dynamicText.textContent = words[index];
+    dynamicText.style.opacity = 1;
+    dynamicText.style.transform = "translateY(0)";
+
+    index++;
+    if (index >= words.length) index = 0;
+  }, 300); // совпадает с duration transition
+}
+
+// запуск сразу
+changeWord();
+
+// смена слова каждые 3 секунды
+setInterval(changeWord, 3000);

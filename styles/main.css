@@ -314,6 +314,197 @@
       display: flex;
       flex: 1;
       flex-direction: column;
+      gap: 1.8rem;
+
+      h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+
+
+        display: flex;
+        flex-direction: column; /* выстраиваем h1 и span вертикально */
+        gap: 0.2rem; /* расстояние между строками */
+
+      }
+
+      .dynamic-text {
+
+      }
+      .dynamic-text {
+        display: block;      /* перенос на новую строку */
+        margin-top: 0.3rem;  /* чуть пространства сверху */
+        color: #6EE7B7;
+        font-weight: 700;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      p {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        line-height: 1.6;
+      }
+
+      .my-links-info {
+        display: flex;
+        gap: 1.3rem;;
+
+
+        .btn-viewPrj {
+          position: relative;
+          overflow: hidden;
+
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6rem;
+
+          padding: 1rem 1.7rem;
+
+          background: linear-gradient(105.92deg, #AAFFD8 0%, #6EE7B7 100%);
+          border-radius: 0.6rem;
+
+          font-weight: 700;
+          font-size: 0.85rem;
+          color: #002115;
+
+          cursor: pointer;
+
+          transition: transform 0.2s ease,
+          box-shadow 0.2s ease,
+          filter 0.2s ease;
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(110, 231, 183, 0.35);
+            filter: brightness(1.03);
+
+            .icon {
+              transform: translateX(4px);
+            }
+
+            .text {
+              transform: translateX(2px);
+            }
+
+            &::after {
+              left: 120%;
+            }
+          }
+
+          &:active {
+            transform: translateY(0);
+            box-shadow: 0 6px 15px rgba(110, 231, 183, 0.25);
+          }
+
+          .text {
+            position: relative;
+            transition: transform 0.3s ease;
+          }
+
+          .icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+          }
+
+          .icon {
+            transition: transform 0.3s ease;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(
+              120deg,
+              transparent,
+              rgba(255, 255, 255, 0.4),
+              transparent
+            );
+
+            transition: left 0.6s ease;
+          }
+        }
+
+        .btn-downloadResume {
+          position: relative;
+          overflow: hidden;
+
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          padding: 1rem 1.7rem;
+
+          border: 1px solid #3D4A43;
+          border-radius: 0.6rem;
+
+          color: #fff;
+          background: transparent;
+
+          cursor: pointer;
+
+          transition: transform 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
+
+          /* hover */
+
+          &:hover {
+            transform: translateY(-2px);
+            border-color: #6b7c72;
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+            .icon {
+              transform: translateY(4px);
+            }
+
+            &::after {
+              left: 100%;
+            }
+          }
+
+          /* active */
+
+          &:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+          }
+
+          /* иконка */
+
+          .icon {
+            transition: transform 0.3s ease;
+          }
+
+          /* shine эффект */
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(
+              120deg,
+              transparent,
+              rgba(255, 255, 255, 0.15),
+              transparent
+            );
+
+            transition: left 0.6s ease;
+          }
+        }
+      }
+
 
       & p {
         /* font-size: clamp(2.5rem, 6vw, 4rem); */
@@ -321,21 +512,28 @@
 
       & .social-links ul {
         display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        & a {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      & .home-img {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: flex-start;
       }
     }
 
-    & .home-img {
+    .site-footer {
       display: flex;
-      flex: 1;
-      flex-direction: column;
-      justify-content: flex-start;
+      align-items: center;
+      justify-content: space-between;
     }
-  }
-
-  .site-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 }
 
@@ -346,3 +544,4 @@
     justify-content: center;
   }
 }
+
