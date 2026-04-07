@@ -34,7 +34,6 @@ const dynamicText = document.querySelector(".dynamic-text");
 let index = 0;
 
 function changeWord() {
-  // анимация исчезания
   dynamicText.style.opacity = 0;
   dynamicText.style.transform = "translateY(-10px)";
 
@@ -45,11 +44,20 @@ function changeWord() {
 
     index++;
     if (index >= words.length) index = 0;
-  }, 300); // совпадает с duration transition
+  }, 300);
 }
-
-// запуск сразу
 changeWord();
 
-// смена слова каждые 3 секунды
 setInterval(changeWord, 3000);
+
+const years = document.querySelector(".bottom-skills span:nth-child(1)");
+let y = 0;
+const target = 2;
+const interval = setInterval(() => {
+  if (y < target) {
+    y++;
+    years.textContent = y + "+ Years";
+  } else {
+    clearInterval(interval);
+  }
+}, 200);
