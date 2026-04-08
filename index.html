@@ -421,8 +421,10 @@
     </main>
     <footer>
       <div class="container site-footer">
-        <a href="#" aria-label="Go to site's home page" class="footer-logo">AD</a>
-        <small>&copy; Copyright 2026 Alexander Domanov</small>
+        <div class="footer-logo">
+          <a href="#" aria-label="Go to site's home page" class="">AD</a>
+        </div>
+        <small class="copyright">&copy; Copyright <span id="year"></span>  Alexander Domanov</small>
         <nav aria-label="Social Links" class="footer-social-links">
           <ul>
             <li>
@@ -497,5 +499,8 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
