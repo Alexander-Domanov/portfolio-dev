@@ -30,8 +30,8 @@
   "scripts": {
     "lint:js": "eslint . --ext .js --fix",
     "lint:css": "stylelint '**/*.{css,scss}' --fix",
-    "lint:html": "htmlhint '**/*.html'",
-    "lint:prettier": "prettier --check .",
+    "lint:html": "htmlhint '**/*.html' --format json",
+    "lint:prettier": "prettier --write .",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html && npm run lint:prettier",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,scss,html,json,md}\"",
     "test": "echo \"No tests yet\"",

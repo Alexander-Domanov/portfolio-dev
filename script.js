@@ -24,25 +24,25 @@ window.addEventListener('scroll', () => {
 });
 
 const words = [
-  "Front-End Developer",
-  "React / Next.js Developer",
-  "Problem Solver",
-  "UI/UX Integration"
+  'Front-End Developer',
+  'React / Next.js Developer',
+  'Problem Solver',
+  'UI/UX Integration',
 ];
 
-const dynamicText = document.querySelector(".dynamic-text");
+const dynamicText = document.querySelector('.dynamic-text');
 let index = 0;
 
 function changeWord() {
   dynamicText.style.opacity = 0;
-  dynamicText.style.transform = "translateY(-10px)";
+  dynamicText.style.transform = 'translateY(-10px)';
 
   setTimeout(() => {
     dynamicText.textContent = words[index];
     dynamicText.style.opacity = 1;
-    dynamicText.style.transform = "translateY(0)";
+    dynamicText.style.transform = 'translateY(0)';
 
-    index++;
+    index += 1;
     if (index >= words.length) index = 0;
   }, 300);
 }
@@ -50,13 +50,13 @@ changeWord();
 
 setInterval(changeWord, 3000);
 
-const years = document.querySelector(".bottom-skills span:nth-child(1)");
+const years = document.querySelector('.bottom-skills span:nth-child(1)');
 let y = 0;
 const target = 2;
 const interval = setInterval(() => {
   if (y < target) {
-    y++;
-    years.textContent = y + "+ Years";
+    y += 1;
+    years.textContent = `${y}+ Years`;
   } else {
     clearInterval(interval);
   }
