@@ -1,0 +1,33 @@
+$font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+$font-mono: 'Roboto Flex', ui-monospace, monospace;
+
+$font-weight-thin: 100;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+$font-size-base: clamp(1rem, 0.85vw + 0.85rem, 1.125rem); /* 16px → 18px */
+$font-size-hero: clamp(3.25rem, 2.4rem + 8.5vw, 7rem); /* Главный заголовок на hero */
+$font-size-display: clamp(2.5rem, 1.8rem + 6vw, 5rem); /* Большой заголовок секции */
+$font-size-section: clamp(1.75rem, 1.2rem + 3.5vw, 2.75rem); /* Обычные заголовки секций */
+$font-size-card: clamp(1.25rem, 0.85rem + 2.2vw, 1.75rem); /* Заголовки карточек */
+
+$space-0: 0rem;
+$space-0-5: 0.125rem;
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 1rem;
+$space-4: 1.5rem;
+$space-5: 3rem;
+
+$radius-sm: 0.625rem;
+$radius-md: 0.75rem;
+
+$text-primary: #eff1f3;
+$text-secondary: #bccac1;
+$accent-primary: #6ee7b7;
+$bg-base: #131313;
+$bg-secondary: #1c1b1b;
