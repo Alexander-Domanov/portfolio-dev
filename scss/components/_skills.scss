@@ -1,0 +1,135 @@
+@use "../abstracts/_tokens" as tokens;
+
+@mixin styles {
+  .skills {
+    padding: 6rem 0;
+    background: #0a0a0a;
+
+    &__inner {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    &__header {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 5rem;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    }
+
+    &__title-label {
+      font-size: 0.875rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: #67e8b5;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    &__title {
+      font-size: 2.75rem;
+      line-height: 1.05;
+      font-weight: 700;
+      color: #ffffff;
+
+      @media (min-width: 768px) {
+        font-size: 3.25rem;
+      }
+    }
+
+    &__description {
+      max-width: 20rem;
+      font-size: 0.875rem;
+      color: #888888;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.6;
+    }
+
+    /* Grid */
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &__category {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &__category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 10px;
+      background: rgba(103, 232, 181, 0.1);
+      color: #67e8b5;
+      transition: all 0.3s ease;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
+      }
+
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+
+    /* Заголовки категорий */
+    &__category-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    /* Теги */
+    &__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    &__tag {
+      padding: 0.65rem 1.25rem;
+      background: #1f1f1f;
+      border: 1px solid #333333;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #e5e5e5;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+
+      &:hover {
+        border-color: #67e8b5;
+        color: #67e8b5;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
