@@ -385,36 +385,104 @@
         </div>
       </section>
 
-      <section id="contact">
-        <div class="container">
-          <h2>CONTACT</h2>
-          <h3>Let's discuss your next project.</h3>
-          <div>
-            <svg aria-hidden="true">ICON</svg>
-            <p>Email me</p>
-            <p>
-              <a href="mailto:alexanderdomanov.dev@gmail.com">alexanderdomanov.dev@gmail.com</a>
-            </p>
+      <section id="contact" class="contact">
+        <div class="container contact__inner">
+          <div class="contact__grid">
+            <div class="contact__info">
+
+              <h2 class="contact__title-label">CONTACT</h2>
+
+              <h3 class="contact__title">
+                Let's discuss your next project.
+              </h3>
+
+              <!-- EMAIL -->
+              <div class="contact__item">
+                <svg aria-hidden="true" class="contact__icon">ICON</svg>
+
+                <div>
+                  <p class="contact__label">Email me</p>
+                  <p class="contact__value">
+                    <a href="mailto:alexanderdomanov.dev@gmail.com">
+                      alexanderdomanov.dev@gmail.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- LOCATION -->
+              <div class="contact__item">
+                <svg aria-hidden="true" class="contact__icon">ICON</svg>
+
+                <div>
+                  <p class="contact__label">Location</p>
+                  <p class="contact__value">
+                    San Francisco, Ca / Remote
+                  </p>
+                </div>
+              </div>
+
+            </div>
+            <div class="contact__form-wrapper">
+
+              <form class="contact__form">
+
+                <fieldset class="contact__fieldset">
+
+                  <legend class="sr-only">Contact Form</legend>
+
+                  <div class="contact__row">
+
+                    <div class="contact__field">
+                      <label for="name">Name</label>
+                      <input
+                        id="name"
+                        class="contact__input"
+                        type="text"
+                        placeholder="Name"
+                        required
+                      />
+                    </div>
+
+                    <div class="contact__field">
+                      <label for="email">Email</label>
+                      <input
+                        id="email"
+                        class="contact__input"
+                        type="email"
+                        placeholder="Email"
+                        required
+                      />
+                    </div>
+
+                  </div>
+
+                  <div class="contact__field">
+                    <label for="message">Message</label>
+                    <textarea
+                      id="message"
+                      class="contact__textarea"
+                      placeholder="Message"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <!-- CAPTCHA -->
+                  <div class="contact__captcha">
+                    <input type="checkbox" id="checkbox" required />
+                    <label for="checkbox">I'M NOT A ROBOT</label>
+                  </div>
+
+                  <button class="contact__button" type="submit">
+                    SEND MESSAGE
+                  </button>
+
+                </fieldset>
+
+              </form>
+
+            </div>
           </div>
-          <div>
-            <svg aria-hidden="true">ICON</svg>
-            <p>Location</p>
-            <p>San Francisco, Ca / Remote</p>
-          </div>
-          <form>
-            <fieldset>
-              <legend>Contact Form</legend>
-              <label for="name">Name</label>
-              <input id="name" type="text" placeholder="Name" required />
-              <label for="email">Email</label>
-              <input id="email" type="email" placeholder="Email" required />
-              <label for="message">Message</label>
-              <textarea id="message" placeholder="Message" required></textarea>
-              <input type="checkbox" id="checkbox" required />
-              <label for="checkbox">I'M NOT A ROBOT</label>
-              <button>SEND MESSAGE</button>
-            </fieldset>
-          </form>
         </div>
       </section>
     </main>
