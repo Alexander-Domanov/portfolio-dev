@@ -4,7 +4,7 @@
 @use "base/_base" as base;
 @use "base/_typography" as typography;
 
-@use "components/_components" as components;
+@use "components/index" as components;
 
 @use "utilities/_utilities" as utilities;
 
@@ -16,6 +16,10 @@
 
 @layer base {
   @include base.styles;
+}
+
+@layer typography {
+  @include typography.styles;
 }
 
 @layer components {

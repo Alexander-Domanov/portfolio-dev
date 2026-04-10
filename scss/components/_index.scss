@@ -1,0 +1,13 @@
+@use "_container" as container;
+@use "_header" as header;
+@use "_buttons" as buttons;
+@use "_hero" as hero;
+@use "_footer" as footer;
+
+@mixin styles {
+  @include container.styles;
+  @include header.styles;
+  @include buttons.styles;
+  @include hero.styles;
+  @include footer.styles;
+}

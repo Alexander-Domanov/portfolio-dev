@@ -40,17 +40,17 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="preload" href="styles/main.css" as="style" />
-    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="styles/main.css" />
 
     <title>Alexander Domanov | Frontend Developer</title>
   </head>
   <body>
     <header id="header">
       <div class="container site-header">
-        <a href="#" aria-label="Go to site's home page" class="logo">AD</a>
+        <a href="#" aria-label="Go to site's home page" class="hero-logo">AD</a>
         <nav aria-label="Main Navigation">
           <ul class="flex">
-            <li><a href="#home">HOME</a></li>
+            <li><a href="#hero">HOME</a></li>
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#skills">SKILLS</a></li>
             <li><a href="#projects">PROJECTS</a></li>
@@ -61,9 +61,9 @@
       </div>
     </header>
     <main>
-      <section id="home">
-        <div class="container home-container">
-          <div class="home-content">
+      <section id="hero">
+        <div class="container hero-container">
+          <div class="hero-content">
             <div>
               <h1>
                 Hi, I'm Alexander
@@ -77,11 +77,10 @@
 
             <div class="my-links-info">
               <a href="#projects" class="btn-view-project">
-                <span class="text-home">View My Work</span>
+                <span>View My Work</span>
 
                 <span class="icon-wrapper">
                   <svg
-                    class="icon-home"
                     aria-hidden="true"
                     width="16"
                     height="16"
@@ -95,7 +94,7 @@
                   </svg>
                 </span>
               </a>
-              <a href="#" class="btn-download-resume">
+              <a href="#" class="btn-download-resume" download>
                 <svg
                   aria-hidden="true"
                   class="icon"
@@ -187,7 +186,7 @@
             </nav>
           </div>
 
-          <div class="home-img">
+          <div class="hero-img">
             <div class="bg-card"></div>
 
             <div class="img-wrapper">
