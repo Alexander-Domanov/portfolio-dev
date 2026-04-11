@@ -11,7 +11,7 @@ $font-weight-black: 900;
 
 $font-size-base: clamp(1rem, 0.85vw + 0.85rem, 1.125rem); /* 16px → 18px */
 $font-size-hero: clamp(3.25rem, 2.4rem + 8.5vw, 7rem); /* Главный заголовок на hero */
-$font-size-display: clamp(2.5rem, 1.8rem + 6vw, 5rem); /* Большой заголовок секции */
+//$font-size-display: clamp(2.25rem, 1.6rem + 4.5vw, 3.75rem);
 $font-size-section: clamp(1.75rem, 1.2rem + 3.5vw, 2.75rem); /* Обычные заголовки секций */
 $font-size-card: clamp(1.25rem, 0.85rem + 2.2vw, 1.75rem); /* Заголовки карточек */
 
@@ -31,3 +31,17 @@ $text-secondary: #bccac1;
 $accent-primary: #6ee7b7;
 $bg-base: #131313;
 $bg-secondary: #1c1b1b;
+
+// surfaces
+$bg-elevated: rgba(255, 255, 255, 0.02);
+$bg-glass: rgba(255, 255, 255, 0.04);
+
+// borders
+$border-subtle: rgba(255, 255, 255, 0.06);
+$border-accent: rgba(110, 231, 183, 0.35);
+
+// effects
+$glow-accent: 0 0 40px rgba(110, 231, 183, 0.15);
+$transition-base: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
+

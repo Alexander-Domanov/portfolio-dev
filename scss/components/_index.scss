@@ -2,6 +2,7 @@
 @use "_header" as header;
 @use "_buttons" as buttons;
 @use "_hero" as hero;
+@use "_about" as about;
 @use "_skills" as skills;
 @use "_contact" as contact;
 @use "_footer" as footer;
@@ -11,6 +12,7 @@
   @include header.styles;
   @include buttons.styles;
   @include hero.styles;
+  @include about.styles;
   @include skills.styles;
   @include contact.styles;
   @include footer.styles;
