@@ -218,65 +218,64 @@
       <section id="about" class="about">
         <div class="about__container">
 
-          <div class="about__header">
-            <h2 class="about__label">ABOUT ME</h2>
-            <h3 class="about__title">
-              I craft high-performance web applications with clean architecture
-              and exceptional user experience.
-            </h3>
-          </div>
+          <!-- LEFT STORY -->
+          <div class="about__left">
 
-          <p class="about__intro">
-            With more than two years of focused practice, I build modern full-stack solutions
-            that are fast, scalable and pleasant to use. My main goal is to create products
-            that solve real problems without unnecessary complexity.
-          </p>
+            <span class="about__label">ABOUT ME</span>
 
-          <!-- Современные вертикальные блоки -->
-          <div class="about__values">
+            <h2 class="about__title">
+              I build <span class="accent">fast systems</span> that feel invisible, but work extremely hard behind the scenes.
+            </h2>
 
-            <div class="about__value" data-animate>
-              <div class="about__value-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6ee7b7" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-              </div>
-              <div class="about__value-content">
-                <h4>Clean Architecture</h4>
-                <p>I prioritize readable, maintainable and well-structured code. Good architecture saves time in the long run.</p>
-              </div>
-            </div>
+            <p class="about__intro">
+              I’m focused on creating <span class="accent">clean architectures</span>, high-performance interfaces, and products that don’t just look good — they feel instant.
+              My goal is simple: remove friction between user and result.
+            </p>
 
-            <div class="about__value" data-animate>
-              <div class="about__value-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </div>
-              <div class="about__value-content">
-                <h4>Performance First</h4>
-                <p>I pay close attention to speed and optimization. Most of my projects achieve 95–100 Lighthouse scores.</p>
-              </div>
-            </div>
+            <div class="about__metrics">
 
-            <div class="about__value" data-animate>
-              <div class="about__value-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-                </svg>
+              <div class="about__metric">
+                <div class="about__metric-value">100%</div>
+                <div class="about__metric-label">Performance score</div>
               </div>
-              <div class="about__value-content">
-                <h4>Scalable Solutions</h4>
-                <p>I build products that work equally well as a small MVP and as a large-scale application with many users.</p>
+
+              <div class="about__metric">
+                <div class="about__metric-value">2+</div>
+                <div class="about__metric-label">Years focused dev</div>
               </div>
+
+              <div class="about__metric">
+                <div class="about__metric-value">10+</div>
+                <div class="about__metric-label">Production apps</div>
+              </div>
+
             </div>
 
           </div>
 
-          <p class="about__closing">
-            Right now I'm focused on creating meaningful digital products where great design meets solid engineering.
-          </p>
+          <!-- RIGHT EXPERIENCE -->
+          <div class="about__right">
+
+            <div class="about__value" data-animate>
+              <h4>Clean Architecture</h4>
+              <p>Systems designed to scale without breaking mental clarity.</p>
+            </div>
+
+            <div class="about__value" data-animate>
+              <h4>Performance First</h4>
+              <p>Every millisecond matters when building real user experiences.</p>
+            </div>
+
+            <div class="about__value" data-animate>
+              <h4>Scalable Thinking</h4>
+              <p>From MVP to production — without rewrites or technical debt chaos.</p>
+            </div>
+
+            <p class="about__closing">
+              I care about building products that feel calm, fast, and intentional.
+            </p>
+
+          </div>
 
         </div>
       </section>
@@ -655,22 +654,52 @@
 
     <script src="script.js"></script>
     <script>
+      document.addEventListener('mousemove', (e) => {
+        document.documentElement.style.setProperty('--mx', `${e.clientX}px`);
+        document.documentElement.style.setProperty('--my', `${e.clientY}px`);
+      });
+
       document.getElementById('year').textContent = new Date().getFullYear();
 
 
-      const cards = document.querySelectorAll('.skills__category');
+      const animateItems = document.querySelectorAll('[data-animate]');
 
-      cards.forEach(card => {
-        card.addEventListener('mousemove', e => {
-          const rect = card.getBoundingClientRect();
-
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-
-          card.style.setProperty('--x', `${x}px`);
-          card.style.setProperty('--y', `${y}px`);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target); // важно: один раз
+          }
         });
+      }, {
+        threshold: 0.25
       });
+
+      animateItems.forEach(el => observer.observe(el));
+
+
+      function attachSpotlight(selector) {
+        document.querySelectorAll(selector).forEach(el => {
+
+          el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            el.style.setProperty('--x', `${x}px`);
+            el.style.setProperty('--y', `${y}px`);
+          });
+
+          el.addEventListener('mouseleave', () => {
+            el.style.setProperty('--x', `50%`);
+            el.style.setProperty('--y', `50%`);
+          });
+        });
+      }
+
+      attachSpotlight('.about__value');
+      attachSpotlight('.skills__category');
     </script>
   </body>
 </html>
