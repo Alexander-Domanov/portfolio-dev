@@ -1,0 +1,72 @@
+@mixin styles {
+  /* ---- reveal animation ---- */
+  .projects__card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+
+  .projects__card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---- buttons ---- */
+  .btn {
+    padding: 0.8rem 1.1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-size: 0.9rem;
+  }
+
+  .btn.primary {
+    background: #6ee7b7;
+    color: #0b0b0b;
+    border: none;
+  }
+
+  .btn.primary:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn.ghost {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+  }
+
+  /* ---- modal ---- */
+  .project-modal {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+  }
+
+  .project-modal.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .project-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+  }
+
+  .project-modal__content {
+    position: relative;
+    max-width: 900px;
+    margin: 5% auto;
+    background: #111;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: scale(0.95);
+    transition: 0.3s ease;
+  }
+
+  .project-modal.active .project-modal__content {
+    transform: scale(1);
+  }
+}
