@@ -48,7 +48,16 @@
     <header id="header">
       <div class="container site-header">
         <a href="#hero" aria-label="Go to site's home page" class="hero-logo">AD</a>
-        <nav aria-label="Main Navigation">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+          aria-label="Open navigation menu"
+        >
+          <span aria-hidden="true">Menu</span>
+        </button>
+        <nav id="primary-navigation" aria-label="Main Navigation">
           <ul class="flex">
             <li><a href="#hero">HOME</a></li>
             <li><a href="#about">ABOUT</a></li>

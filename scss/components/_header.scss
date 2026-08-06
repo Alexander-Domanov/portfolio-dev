@@ -4,6 +4,24 @@
     align-items: center;
     justify-content: space-between;
 
+    .menu-toggle {
+      display: none;
+      padding: 0.5rem 0.75rem;
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #eff1f3;
+      text-transform: uppercase;
+      background: transparent;
+      border: 1px solid #6ee7b7;
+      border-radius: 0.5rem;
+
+      &:focus-visible {
+        outline: 2px solid #6ee7b7;
+        outline-offset: 4px;
+      }
+    }
+
     .hero-logo {
       position: relative;
       display: inline-block;
@@ -64,6 +82,71 @@
     & ul a:hover::after,
     & ul a:focus-visible::after {
       transform: scaleX(1);
+    }
+  }
+
+  @media (width <= 768px) {
+    .site-header {
+      flex-wrap: wrap;
+      gap: 0 0.75rem;
+
+      .resume-btn {
+        display: none;
+      }
+
+      .menu-toggle {
+        margin-left: auto;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.25rem;
+        min-height: 0;
+        overflow: hidden;
+      }
+
+      nav a {
+        width: 100%;
+        padding: 0.5rem;
+      }
+    }
+
+    .header--enhanced {
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav {
+        display: grid;
+        grid-template-rows: 0fr;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          grid-template-rows 225ms ease,
+          opacity 225ms ease,
+          visibility 0s linear 225ms;
+      }
+    }
+
+    .header--enhanced.is-menu-open nav {
+      grid-template-rows: 1fr;
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transition-delay: 0s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .header--enhanced nav {
+        transition: none;
+      }
     }
   }
 
