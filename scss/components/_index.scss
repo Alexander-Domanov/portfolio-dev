@@ -1,25 +1,19 @@
 @use "_container" as container;
 @use "_header" as header;
+@use "_buttons" as buttons;
 @use "_hero" as hero;
 @use "_about" as about;
 @use "_skills" as skills;
-@use "_projects" as projects;
 @use "_contact" as contact;
 @use "_footer" as footer;
-
-@use "_buttons" as buttons;
-@use "_modal" as modal;
 
 @mixin styles {
   @include container.styles;
   @include header.styles;
+  @include buttons.styles;
   @include hero.styles;
   @include about.styles;
   @include skills.styles;
-  @include projects.styles;
   @include contact.styles;
   @include footer.styles;
-
-  @include buttons.styles;
-  @include modal.styles;
 }

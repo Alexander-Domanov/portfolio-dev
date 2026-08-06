@@ -7,6 +7,7 @@
     background: t.$bg-base;
     overflow: hidden;
 
+    /* 🌌 AMBIENT BACKGROUND SYSTEM */
     &::before {
       content: "";
       position: absolute;

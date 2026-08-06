@@ -1,8 +1,8 @@
 {
   "name": "alexander-domanov-portfolio",
   "version": "1.0.0",
+  "private": true,
   "description": "Personal portfolio website built with vanilla HTML, CSS, SCSS, and JavaScript",
-  "main": "index.js",
   "keywords": [
     "portfolio",
     "html",
@@ -11,7 +11,7 @@
     "javascript",
     "vanilla-js"
   ],
-  "author": "Alexander domanov <alexanderdomanov.dev@gmail.com",
+  "author": "Alexander Domanov <alexanderdomanov.dev@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.57.1",
@@ -22,18 +22,25 @@
     "husky": "^8.0.0",
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
+    "sass": "^1.90.0",
     "stylelint": "^16.26.1",
     "stylelint-config-standard": "^39.0.1",
     "stylelint-config-standard-scss": "^16.0.0",
-    "stylelint-order": "^7.0.1"
+    "stylelint-order": "^7.0.1",
+    "stylelint-scss": "^6.14.0"
   },
   "scripts": {
-    "lint:js": "eslint . --ext .js --fix",
-    "lint:css": "stylelint '**/*.{css,scss}' --fix",
-    "lint:html": "htmlhint '**/*.html' --format json",
-    "lint:prettier": "prettier --write .",
-    "lint": "npm run lint:js && npm run lint:css && npm run lint:html && npm run lint:prettier",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,scss,html,json,md}\"",
+    "dev": "sass --watch scss/main.scss:styles/main.css --style=expanded --source-map --poll",
+    "build": "sass scss/main.scss:styles/main.css --style=compressed --no-source-map",
+    "check:js": "eslint . --ext .js",
+    "check:styles": "stylelint 'scss/**/*.scss'",
+    "check:html": "htmlhint '**/*.html' --format unix",
+    "check:format": "prettier --check \"*.{js,json,md,html}\" \"scss/**/*.scss\"",
+    "check": "npm run check:js && npm run check:styles && npm run check:html && npm run check:format",
+    "fix:js": "eslint . --ext .js --fix",
+    "fix:styles": "stylelint 'scss/**/*.scss' --fix",
+    "fix:format": "prettier --write \"*.{js,json,md,html}\" \"scss/**/*.scss\"",
+    "fix": "npm run fix:js && npm run fix:styles && npm run fix:format",
     "test": "echo \"No tests yet\"",
     "prepare": "husky install"
   },

@@ -60,7 +60,6 @@
         <a class="resume-btn" aria-label="Download Resume">Resume</a>
       </div>
     </header>
-
     <main>
       <section id="hero">
         <div class="container hero-container">
@@ -376,51 +375,102 @@
       </section>
 
 
-      <section id="projects" class="projects">
-        <div class="projects__inner">
-
-          <div class="projects__header">
-            <div class="projects__label">WORKS</div>
-            <h2 class="projects__title">Selected Projects</h2>
-            <p class="projects__subtitle">
-              Handpicked works that showcase my craft in frontend, design systems and digital experiences.
-            </p>
-          </div>
-
-          <div class="projects__grid" id="projectsGrid">
-            <!-- Карточки будут сгенерированы через JS -->
-          </div>
-
-          <div class="projects__load-more">
-            <button class="projects__load-btn" id="loadMoreBtn">
-              Show More Projects
-              <span class="material-symbols-outlined">keyboard_arrow_down</span>
-            </button>
-          </div>
-
+      <section id="projects">
+        <div class="container">
+          <h2>WORKS</h2>
+          <h3>SELECTED PROJECTS</h3>
+          <article>
+            <img
+              src="https://kvadrat.az/uploads/articles/674e1265b3251.png.pagespeed.ce.3mKpWAdOZr.png"
+              width="384"
+              height="384"
+              alt=""
+            />
+            <h4>Nova CRM</h4>
+            <p>A minimalist customer relationship tool with focus on sales velocity.</p>
+            <div>
+              <a href="https://github.com/username/nova-crm" aria-label="View Nova CRM on GitHub">
+                <svg aria-hidden="true">GITHUB ICON</svg>
+              </a>
+              <a href="https://nova-crm.demo.com" aria-label="View Nova CRM project">
+                <svg aria-hidden="true">VIEW PROJECT ICON</svg>
+              </a>
+            </div>
+          </article>
+          <article>
+            <img
+              src="https://kvadrat.az/uploads/articles/674e1265b3251.png.pagespeed.ce.3mKpWAdOZr.png"
+              width="384"
+              height="384"
+              alt=""
+            />
+            <h4>Nova CRM</h4>
+            <p>A minimalist customer relationship tool with a focus on sales velocity.</p>
+            <div>
+              <a href="https://github.com/username/nova-crm" aria-label="View Nova CRM on GitHub">
+                <svg aria-hidden="true">GITHUB ICON</svg>
+              </a>
+              <a href="https://nova-crm.demo.com" aria-label="View Nova CRM project">
+                <svg aria-hidden="true">VIEW PROJECT ICON</svg>
+              </a>
+            </div>
+          </article>
+          <article>
+            <img
+              src="https://kvadrat.az/uploads/articles/674e1265b3251.png.pagespeed.ce.3mKpWAdOZr.png"
+              width="384"
+              height="384"
+              alt=""
+            />
+            <h4>Nova CRM</h4>
+            <p>A minimalist customer relationship tool with a focus on sales velocity.</p>
+            <div>
+              <a href="https://github.com/username/nova-crm" aria-label="View Nova CRM on GitHub">
+                <svg aria-hidden="true">GITHUB ICON</svg>
+              </a>
+              <a href="https://nova-crm.demo.com" aria-label="View Nova CRM project">
+                <svg aria-hidden="true">VIEW PROJECT ICON</svg>
+              </a>
+            </div>
+          </article>
+          <article>
+            <img
+              src="https://kvadrat.az/uploads/articles/674e1265b3251.png.pagespeed.ce.3mKpWAdOZr.png"
+              width="384"
+              height="384"
+              alt=""
+            />
+            <h4>Nova CRM</h4>
+            <p>A minimalist customer relationship tool with a focus on sales velocity.</p>
+            <div>
+              <a href="https://github.com/username/nova-crm" aria-label="View Nova CRM on GitHub">
+                <svg aria-hidden="true">GITHUB ICON</svg>
+              </a>
+              <a href="https://nova-crm.demo.com" aria-label="View Nova CRM project">
+                <svg aria-hidden="true">VIEW PROJECT ICON</svg>
+              </a>
+            </div>
+          </article>
+          <article>
+            <img
+              src="https://kvadrat.az/uploads/articles/674e1265b3251.png.pagespeed.ce.3mKpWAdOZr.png"
+              width="384"
+              height="384"
+              alt=""
+            />
+            <h4>Nova CRM</h4>
+            <p>A minimalist customer relationship tool with focus on sales velocity.</p>
+            <div>
+              <a href="https://github.com/username/nova-crm" aria-label="View Nova CRM on GitHub">
+                <svg aria-hidden="true">GITHUB ICON</svg>
+              </a>
+              <a href="https://nova-crm.demo.com" aria-label="View Nova CRM project">
+                <svg aria-hidden="true">VIEW PROJECT ICON</svg>
+              </a>
+            </div>
+          </article>
         </div>
       </section>
-      <div class="project-modal" id="projectModal">
-        <div class="project-modal__backdrop"></div>
-
-        <div class="project-modal__content">
-          <button class="project-modal__close" id="closeModal">×</button>
-
-          <img id="modalImage" src="" alt="">
-
-          <div class="project-modal__info">
-            <h2 id="modalTitle"></h2>
-            <p id="modalDesc"></p>
-
-            <div class="project-modal__tags" id="modalTags"></div>
-
-            <div class="project-modal__links">
-              <a id="modalDemo" target="_blank">Live</a>
-              <a id="modalGit" target="_blank">Source</a>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <section id="contact" class="contact">
         <div class="container contact__inner">
@@ -523,7 +573,6 @@
         </div>
       </section>
     </main>
-    <script src="js/_main.js"></script>
     <footer>
       <div class="container site-footer">
         <div class="footer-logo">
@@ -603,6 +652,54 @@
       </div>
     </footer>
 
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('mousemove', (e) => {
+        document.documentElement.style.setProperty('--mx', `${e.clientX}px`);
+        document.documentElement.style.setProperty('--my', `${e.clientY}px`);
+      });
 
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+
+      const animateItems = document.querySelectorAll('[data-animate]');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target); // важно: один раз
+          }
+        });
+      }, {
+        threshold: 0.25
+      });
+
+      animateItems.forEach(el => observer.observe(el));
+
+
+      function attachSpotlight(selector) {
+        document.querySelectorAll(selector).forEach(el => {
+
+          el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            el.style.setProperty('--x', `${x}px`);
+            el.style.setProperty('--y', `${y}px`);
+          });
+
+          el.addEventListener('mouseleave', () => {
+            el.style.setProperty('--x', `50%`);
+            el.style.setProperty('--y', `50%`);
+          });
+        });
+      }
+
+      attachSpotlight('.about__value');
+      attachSpotlight('.skills__category');
+    </script>
   </body>
 </html>
