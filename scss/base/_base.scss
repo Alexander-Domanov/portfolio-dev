@@ -3,6 +3,7 @@
 @mixin styles {
   html {
     font-size: tokens.$font-size-base;
+    scroll-padding-top: 6rem;
   }
 
   body {
@@ -72,5 +73,15 @@
     backdrop-filter: blur(0);
     background-color: tokens.$bg-secondary;
     border-bottom-color: tokens.$accent-primary;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header {
+    transition: none;
+  }
+
+  header.scroll-blink {
+    animation: none;
   }
 }

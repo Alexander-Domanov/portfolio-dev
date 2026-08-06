@@ -140,13 +140,10 @@
       transform: scale(1.05);
     }
 
-    /* &:focus-visible { */
-
-    /*  outline: 2px solid var(--accent-primary); */
-
-    /*  outline-offset: 2px; */
-
-    /* } */
+    &:focus-visible {
+      outline: 2px solid tokens.$accent-primary;
+      outline-offset: 4px;
+    }
   }
 
   @media (prefers-contrast: more) {

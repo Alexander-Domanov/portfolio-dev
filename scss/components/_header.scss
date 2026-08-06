@@ -41,6 +41,13 @@
       color: #6ee7b7;
     }
 
+    .hero-logo:focus-visible,
+    & ul a:focus-visible {
+      border-radius: 0.25rem;
+      outline: 2px solid #6ee7b7;
+      outline-offset: 4px;
+    }
+
     & ul a::after {
       position: absolute;
       bottom: 0;
@@ -54,7 +61,8 @@
       transition: transform 0.3s ease;
     }
 
-    & ul a:hover::after {
+    & ul a:hover::after,
+    & ul a:focus-visible::after {
       transform: scaleX(1);
     }
   }
