@@ -80,7 +80,10 @@
       background: rgba(255, 255, 255, 0.015);
       border: 1px solid rgba(255, 255, 255, 0.06);
       backdrop-filter: blur(12px);
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition:
+        transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+        border-color 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+        box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
       overflow: hidden;
 
       &::before {
@@ -88,7 +91,7 @@
         position: absolute;
         inset: 0;
         background: radial-gradient(
-            600px circle at var(--x) var(--y),
+            600px circle at var(--x, 50%) var(--y, 50%),
             rgba(110, 231, 183, 0.22),
             rgba(110, 231, 183, 0.06) 40%,
             transparent 70%
@@ -178,13 +181,34 @@
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       overflow-wrap: anywhere;
-      transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+      transition:
+        transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+        color 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+        background-color 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+        border-color 0.35s cubic-bezier(0.23, 1, 0.32, 1);
 
       &:hover {
         background: rgba(110, 231, 183, 0.1);
         border-color: rgba(110, 231, 183, 0.45);
         color: #fff;
         transform: translateY(-2px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      &__category,
+      &__category::before,
+      &__tag {
+        transition: none;
+      }
+
+      &__category::before {
+        display: none;
+      }
+
+      &__category:hover,
+      &__tag:hover {
+        transform: none;
       }
     }
   }

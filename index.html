@@ -665,26 +665,6 @@
       document.getElementById('year').textContent = new Date().getFullYear();
       
 
-      function attachSpotlight(selector) {
-        document.querySelectorAll(selector).forEach(el => {
-
-          el.addEventListener('mousemove', (e) => {
-            const rect = el.getBoundingClientRect();
-
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            el.style.setProperty('--x', `${x}px`);
-            el.style.setProperty('--y', `${y}px`);
-          });
-
-          el.addEventListener('mouseleave', () => {
-            el.style.setProperty('--x', `50%`);
-            el.style.setProperty('--y', `50%`);
-          });
-        });
-      }
-
       const aboutSection = document.querySelector('.about');
       const aboutItems = Array.from(aboutSection.querySelectorAll('[data-animate]'));
       const aboutReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -778,7 +758,57 @@
       aboutReducedMotion.addEventListener('change', updateAboutMotionPreference);
       updateAboutMotionPreference();
 
-      attachSpotlight('.skills__category');
+      const skillsCards = Array.from(document.querySelectorAll('.skills__category'));
+      const skillsReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const skillsHover = window.matchMedia('(hover: hover)');
+      const skillsFinePointer = window.matchMedia('(pointer: fine)');
+      let skillsSpotlightCleanups = [];
+
+      function stopSkillsSpotlight() {
+        skillsSpotlightCleanups.forEach(cleanup => cleanup());
+        skillsSpotlightCleanups = [];
+
+        skillsCards.forEach(card => {
+          card.style.removeProperty('--x');
+          card.style.removeProperty('--y');
+        });
+      }
+
+      function startSkillsSpotlight() {
+        stopSkillsSpotlight();
+
+        if (skillsReducedMotion.matches || !skillsHover.matches || !skillsFinePointer.matches) {
+          return;
+        }
+
+        skillsCards.forEach(card => {
+          const handleMouseMove = (e) => {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--x', `${e.clientX - rect.left}px`);
+            card.style.setProperty('--y', `${e.clientY - rect.top}px`);
+          };
+          const handleMouseLeave = () => {
+            card.style.removeProperty('--x');
+            card.style.removeProperty('--y');
+          };
+
+          card.addEventListener('mousemove', handleMouseMove);
+          card.addEventListener('mouseleave', handleMouseLeave);
+          skillsSpotlightCleanups.push(() => {
+            card.removeEventListener('mousemove', handleMouseMove);
+            card.removeEventListener('mouseleave', handleMouseLeave);
+          });
+        });
+      }
+
+      function updateSkillsSpotlight() {
+        startSkillsSpotlight();
+      }
+
+      skillsReducedMotion.addEventListener('change', updateSkillsSpotlight);
+      skillsHover.addEventListener('change', updateSkillsSpotlight);
+      skillsFinePointer.addEventListener('change', updateSkillsSpotlight);
+      updateSkillsSpotlight();
     </script>
   </body>
 </html>
