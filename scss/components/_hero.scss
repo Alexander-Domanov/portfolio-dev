@@ -22,15 +22,17 @@
         line-height: 1.2;
         flex-direction: column;
         gap: 0.2rem;
+      }
 
-        .dynamic-text {
-          display: block;
-          height: 8rem;
-          font-weight: 700;
-          color: #6ee7b7;
-          margin-top: 0.3rem;
-          transition: opacity 0.3s ease, transform 0.3s ease;
-        }
+      .dynamic-text {
+        display: block;
+        height: 8rem;
+        margin: 0.3rem 0 0;
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: #6ee7b7;
+        transition: opacity 0.3s ease, transform 0.3s ease;
       }
 
       p {
@@ -44,10 +46,16 @@
         gap: 1.3rem;
       }
 
-      .social-links ul {
+      .social-links {
         display: flex;
         align-items: center;
         gap: 1rem;
+
+        ul {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
 
         a {
           display: flex;
@@ -128,8 +136,11 @@
     }
 
     @media (width <= 768px) {
+      min-height: auto;
       align-items: center;
       flex-direction: column;
+      gap: 2rem;
+      justify-content: flex-start;
 
       & .hero-content,
       & .hero-img {
