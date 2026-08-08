@@ -13,7 +13,7 @@
       flex-direction: column;
       gap: 1.8rem;
       max-width: 50%;
-      min-width: 320px;
+      min-width: 0;
 
       h1 {
         display: flex;
@@ -62,7 +62,7 @@
       height: 540px;
       flex: 1;
       max-width: 50%;
-      min-width: 320px;
+      min-width: 0;
 
       .bg-card {
         position: absolute;
@@ -138,8 +138,13 @@
       }
 
       & .hero-img {
-        width: 256px;
-        height: 256px;
+        width: min(100%, 256px);
+        height: auto;
+        aspect-ratio: 1;
+
+        .bg-card {
+          inset: 0.5rem;
+        }
       }
     }
   }
