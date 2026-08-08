@@ -90,11 +90,16 @@
     /* METRICS (premium cards) */
     &__metrics {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       gap: 1rem;
+
+      @media (width >= 480px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
     &__metric {
+      min-width: 0;
       padding: 1.2rem;
       border-radius: t.$radius-md;
       background: rgba(255,255,255,0.02);
@@ -122,6 +127,7 @@
       font-size: 0.7rem;
       color: t.$text-secondary;
       margin-top: 0.3rem;
+      overflow-wrap: anywhere;
     }
 
     /* RIGHT */
