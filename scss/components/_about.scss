@@ -57,6 +57,7 @@
     }
 
     &__label {
+      display: inline-block;
       font-size: 0.75rem;
       letter-spacing: 0.4em;
       text-transform: uppercase;
@@ -91,6 +92,9 @@
     &__metrics {
       display: grid;
       grid-template-columns: 1fr;
+      margin: 0;
+      padding: 0;
+      list-style: none;
       gap: 1rem;
 
       @media (width >= 480px) {
@@ -184,7 +188,7 @@
         transform: translateY(-6px);
       }
 
-      h4 {
+      h3 {
         font-size: 1.2rem;
         color: t.$text-primary;
         margin-bottom: 0.5rem;
