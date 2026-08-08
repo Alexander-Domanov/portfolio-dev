@@ -158,5 +158,32 @@
         }
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dynamic-text {
+        transition: none;
+      }
+
+      & .hero-img {
+        .bg-card,
+        .img-wrapper img {
+          transition: none;
+        }
+
+        .floating-skills span {
+          animation: none;
+        }
+
+        &:hover {
+          .bg-card {
+            transform: rotate(6deg);
+          }
+
+          .img-wrapper img {
+            transform: none;
+          }
+        }
+      }
+    }
   }
 }
