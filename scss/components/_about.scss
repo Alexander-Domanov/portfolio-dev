@@ -100,7 +100,10 @@
       background: rgba(255,255,255,0.02);
       border: 1px solid rgba(255,255,255,0.06);
       backdrop-filter: blur(10px);
-      transition: all 0.4s ease;
+      transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 
       &:hover {
         transform: translateY(-6px);
@@ -138,9 +141,11 @@
       position: relative;
       overflow: hidden;
 
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s cubic-bezier(0.22,1,0.36,1);
+      opacity: 1;
+      transform: none;
+      transition:
+        opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+        transform 0.6s cubic-bezier(0.22,1,0.36,1);
 
       &::before {
         content: "";
@@ -155,9 +160,14 @@
         transition: opacity 0.35s ease;
       }
 
-      &.animate {
+      .about--enhanced & {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      .about--enhanced &.animate {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
       }
 
       &:hover::before {
@@ -187,6 +197,25 @@
       color: t.$text-secondary;
       line-height: 1.7;
       opacity: 0.9;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      &__metric,
+      &__value,
+      &__value::before {
+        transition: none;
+      }
+
+      &__metric:hover,
+      &__value:hover {
+        transform: none;
+      }
+
+      &--enhanced &__value,
+      &--enhanced &__value.animate {
+        opacity: 1;
+        transform: none;
+      }
     }
   }
 }
