@@ -1,15 +1,8 @@
 export function initHero() {
   const dynamicText = document.querySelector('.dynamic-text');
-  const years = document.querySelector('.bottom-skills span:nth-child(1)');
+  if (!dynamicText) return;
 
-  if (!dynamicText || !years) return;
-
-  const words = [
-    'Front-End Developer',
-    'React / Next.js Developer',
-    'Problem Solver',
-    'UI/UX Integration',
-  ];
+  const words = ['Frontend Developer', 'React / Next.js Developer', 'TypeScript Developer'];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const defaultRole = 'Frontend Developer';
   let index = 0;
@@ -54,40 +47,13 @@ export function initHero() {
     roleIntervalId = window.setInterval(changeWord, 3000);
   }
 
-  let y = 0;
-  const target = 2;
-  let yearsIntervalId = null;
-
-  function stopYearsCounter() {
-    window.clearInterval(yearsIntervalId);
-    yearsIntervalId = null;
-    y = target;
-    years.textContent = `${target}+ Years`;
-  }
-
-  function startYearsCounter() {
-    if (yearsIntervalId !== null || y >= target) return;
-
-    yearsIntervalId = window.setInterval(() => {
-      y += 1;
-      years.textContent = `${y}+ Years`;
-
-      if (y >= target) {
-        window.clearInterval(yearsIntervalId);
-        yearsIntervalId = null;
-      }
-    }, 200);
-  }
-
   function updateMotionPreference() {
     if (reducedMotion.matches) {
       showDefaultRole();
-      stopYearsCounter();
       return;
     }
 
     startRoleRotation();
-    startYearsCounter();
   }
 
   reducedMotion.addEventListener('change', updateMotionPreference);
