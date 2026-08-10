@@ -1,4 +1,4 @@
-@use "../abstracts/_tokens" as t;
+@use '../abstracts/_tokens' as t;
 
 @mixin styles {
   .skills {
@@ -9,7 +9,7 @@
 
     /* Декоративный градиентный блик */
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       width: 700px;
       height: 700px;
@@ -79,7 +79,7 @@
       position: relative;
       min-width: 0;
       padding: 2.25rem 2rem;
-      border-radius: t.$radius-md;           // лучше использовать lg для таких карточек
+      border-radius: t.$radius-md; // лучше использовать lg для таких карточек
       background: rgb(255 255 255 / 1.5%);
       border: 1px solid rgb(255 255 255 / 6%);
       backdrop-filter: blur(12px);
@@ -90,14 +90,14 @@
       overflow: hidden;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         inset: 0;
         background: radial-gradient(
-            600px circle at var(--x, 50%) var(--y, 50%),
-            rgb(110 231 183 / 22%),
-            rgb(110 231 183 / 6%) 40%,
-            transparent 70%
+          600px circle at var(--x, 50%) var(--y, 50%),
+          rgb(110 231 183 / 22%),
+          rgb(110 231 183 / 6%) 40%,
+          transparent 70%
         );
         opacity: 0;
         transition: opacity 0.4s ease;
@@ -135,7 +135,7 @@
       position: relative;
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         inset: -6px;
         border-radius: inherit;

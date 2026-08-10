@@ -1,4 +1,4 @@
-@use "../abstracts/_tokens" as tokens;
+@use '../abstracts/_tokens' as tokens;
 
 @mixin styles {
   @font-face {
@@ -22,7 +22,10 @@
       url('../../fonts/Roboto-VariableFont_wdth,wght.woff2') format('woff2');
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     margin: 0;
     font-family: tokens.$font-sans;
     font-weight: tokens.$font-weight-bold;
@@ -54,5 +57,4 @@
     color: tokens.$text-secondary;
     cursor: pointer;
   }
-
 }

@@ -1,4 +1,8 @@
-$font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+$font-sans:
+  'Inter',
+  system-ui,
+  -apple-system,
+  sans-serif;
 $font-mono: 'Roboto Flex', ui-monospace, monospace;
 $font-weight-thin: 100;
 $font-weight-regular: 400;
@@ -40,5 +44,3 @@ $border-accent: rgb(110 231 183 / 35%);
 // effects
 $glow-accent: 0 0 40px rgb(110 231 183 / 15%);
 $transition-base: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-
-

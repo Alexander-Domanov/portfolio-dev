@@ -32,7 +32,9 @@
         font-weight: 700;
         line-height: 1.2;
         color: #6ee7b7;
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
       }
 
       p {
@@ -79,7 +81,9 @@
         border-radius: 2rem;
         inset: 0;
         transform: rotate(6deg);
-        transition: transform 0.5s ease, background 0.5s ease;
+        transition:
+          transform 0.5s ease,
+          background 0.5s ease;
       }
 
       .img-wrapper {
@@ -138,8 +142,14 @@
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
     }
 
     @media (width <= 768px) {

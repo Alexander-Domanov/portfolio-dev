@@ -14,7 +14,10 @@ export function initHeader() {
     header.classList.toggle('is-menu-open', isOpen);
     primaryNavigation.inert = mobileNavigation.matches && !isOpen;
     menuToggle.setAttribute('aria-expanded', String(isOpen));
-    menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Close navigation menu' : 'Open navigation menu'
+    );
   }
 
   function closeMenu(restoreFocus = false) {

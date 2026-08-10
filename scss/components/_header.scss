@@ -29,15 +29,17 @@
       font-weight: 900;
       line-height: 2;
       color: #6ee7b7;
-      text-shadow: 0 0 0 #6ee7b7,
-      0 0 0 #6ee7b7;
+      text-shadow:
+        0 0 0 #6ee7b7,
+        0 0 0 #6ee7b7;
       text-transform: uppercase;
       transition: all 0.3s ease;
 
       &:hover {
-        text-shadow: 0 0 6px #6ee7b7,
-        0 0 12px #6ee7b7,
-        0 0 18px #6ee7b7;
+        text-shadow:
+          0 0 6px #6ee7b7,
+          0 0 12px #6ee7b7,
+          0 0 18px #6ee7b7;
         transform: scale(1.1);
       }
     }
@@ -148,5 +150,4 @@
       }
     }
   }
-
 }

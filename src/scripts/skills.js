@@ -14,10 +14,10 @@ export function initSkills() {
   let skillsSpotlightCleanups = [];
 
   function stopSkillsSpotlight() {
-    skillsSpotlightCleanups.forEach(cleanup => cleanup());
+    skillsSpotlightCleanups.forEach((cleanup) => cleanup());
     skillsSpotlightCleanups = [];
 
-    skillsCards.forEach(card => {
+    skillsCards.forEach((card) => {
       card.style.removeProperty('--x');
       card.style.removeProperty('--y');
     });
@@ -30,7 +30,7 @@ export function initSkills() {
       return;
     }
 
-    skillsCards.forEach(card => {
+    skillsCards.forEach((card) => {
       const handleMouseMove = (e) => {
         const rect = card.getBoundingClientRect();
         card.style.setProperty('--x', `${e.clientX - rect.left}px`);

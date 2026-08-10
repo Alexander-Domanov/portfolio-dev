@@ -1,6 +1,6 @@
-@use "../abstracts/_tokens" as tokens;
+@use '../abstracts/_tokens' as tokens;
 
-@mixin styles  {
+@mixin styles {
   .flex-center {
     display: flex;
     align-items: center;

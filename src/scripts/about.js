@@ -27,10 +27,10 @@ export function initAbout() {
   }
 
   function stopAboutSpotlight() {
-    aboutSpotlightCleanups.forEach(cleanup => cleanup());
+    aboutSpotlightCleanups.forEach((cleanup) => cleanup());
     aboutSpotlightCleanups = [];
 
-    aboutItems.forEach(el => {
+    aboutItems.forEach((el) => {
       el.style.removeProperty('--x');
       el.style.removeProperty('--y');
     });
@@ -48,7 +48,7 @@ export function initAbout() {
       return;
     }
 
-    aboutItems.forEach(el => {
+    aboutItems.forEach((el) => {
       const handleMouseMove = (e) => {
         const rect = el.getBoundingClientRect();
         el.style.setProperty('--x', `${e.clientX - rect.left}px`);
@@ -71,7 +71,7 @@ export function initAbout() {
   function showAllAboutItems() {
     stopAboutObserver();
     aboutSection.classList.remove('about--enhanced');
-    aboutItems.forEach(el => el.classList.add('animate'));
+    aboutItems.forEach((el) => el.classList.add('animate'));
     aboutRevealComplete = true;
   }
 
@@ -80,23 +80,26 @@ export function initAbout() {
 
     stopAboutObserver();
     aboutSection.classList.add('about--enhanced');
-    aboutObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
+    aboutObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
 
-        entry.target.classList.add('animate');
-        aboutObserver.unobserve(entry.target);
-      });
+          entry.target.classList.add('animate');
+          aboutObserver.unobserve(entry.target);
+        });
 
-      if (aboutItems.every(el => el.classList.contains('animate'))) {
-        stopAboutObserver();
-        aboutRevealComplete = true;
+        if (aboutItems.every((el) => el.classList.contains('animate'))) {
+          stopAboutObserver();
+          aboutRevealComplete = true;
+        }
+      },
+      {
+        threshold: 0.25,
       }
-    }, {
-      threshold: 0.25,
-    });
+    );
 
-    aboutItems.forEach(el => aboutObserver.observe(el));
+    aboutItems.forEach((el) => aboutObserver.observe(el));
   }
 
   function updateAboutSpotlight() {
