@@ -8,7 +8,7 @@
     font-style: normal;
     src:
       local('Inter'),
-      url('/fonts/Inter-VariableFont_opsz,wght.woff2') format('woff2');
+      url('../../fonts/Inter-VariableFont_opsz,wght.woff2') format('woff2');
   }
 
   @font-face {
@@ -19,7 +19,7 @@
     font-style: normal;
     src:
       local('Roboto Flex'),
-      url('/fonts/Roboto-VariableFont_wdth,wght.woff2') format('woff2');
+      url('../../fonts/Roboto-VariableFont_wdth,wght.woff2') format('woff2');
   }
 
   h1, h2, h3, h4 {
@@ -56,4 +56,3 @@
   }
 
 }
-

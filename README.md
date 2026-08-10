@@ -15,20 +15,26 @@ npm install
 
 ## Development
 
-Start the SCSS watcher:
+Start the Vite development server with HMR:
 
 ```sh
 npm run dev
 ```
 
-Open `index.html` in a browser. The SCSS entry point is `scss/main.scss`, and generated styles are written to `styles/main.css`.
+Vite serves the site locally and processes the SCSS entry point from `scss/main.scss`.
 
 ## Production build
 
-Create compressed CSS without a source map:
+Create the production build in `dist/`:
 
 ```sh
 npm run build
+```
+
+Preview the production build locally:
+
+```sh
+npm run preview
 ```
 
 ## Checks

@@ -39,8 +39,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <link rel="preload" href="styles/main.css" as="style" />
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="/scss/main.scss" />
 
     <title>Alexander Domanov | Frontend Developer</title>
   </head>
@@ -653,7 +652,7 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="/script.js"></script>
     <script>
       document.addEventListener('mousemove', (e) => {
         document.documentElement.style.setProperty('--mx', `${e.clientX}px`);
