@@ -13,7 +13,7 @@
       position: absolute;
       width: 900px;
       height: 900px;
-      background: radial-gradient(circle, rgba(110,231,183,0.10), transparent 60%);
+      background: radial-gradient(circle, rgb(110 231 183 / 10%), transparent 60%);
       top: -300px;
       right: -300px;
       filter: blur(120px);
@@ -24,7 +24,7 @@
       position: absolute;
       width: 800px;
       height: 800px;
-      background: radial-gradient(circle, rgba(167,139,250,0.08), transparent 65%);
+      background: radial-gradient(circle, rgb(167 139 250 / 8%), transparent 65%);
       bottom: -350px;
       left: -350px;
       filter: blur(140px);
@@ -34,12 +34,11 @@
       max-width: 80rem;
       margin: 0 auto;
       padding: 0 t.$space-4;
-
       display: grid;
       grid-template-columns: 1fr;
       gap: 5rem;
 
-      @media (min-width: 1024px) {
+      @media (width >= 1024px) {
         grid-template-columns: 1.1fr 0.9fr;
         align-items: start;
         gap: 7rem;
@@ -50,7 +49,7 @@
     &__left {
       position: relative;
 
-      @media (min-width: 1024px) {
+      @media (width >= 1024px) {
         position: sticky;
         top: 6rem;
       }
@@ -106,8 +105,8 @@
       min-width: 0;
       padding: 1.2rem;
       border-radius: t.$radius-md;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgb(255 255 255 / 2%);
+      border: 1px solid rgb(255 255 255 / 6%);
       backdrop-filter: blur(10px);
       transition:
         transform 0.4s ease,
@@ -116,8 +115,8 @@
 
       &:hover {
         transform: translateY(-6px);
-        border-color: rgba(110,231,183,0.35);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        border-color: rgb(110 231 183 / 35%);
+        box-shadow: 0 20px 40px rgb(0 0 0 / 40%);
       }
     }
 
@@ -145,12 +144,11 @@
     &__value {
       padding: 1.5rem;
       border-radius: t.$radius-md;
-      background: rgba(255,255,255,0.015);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgb(255 255 255 / 1.5%);
+      border: 1px solid rgb(255 255 255 / 6%);
       backdrop-filter: blur(12px);
       position: relative;
       overflow: hidden;
-
       opacity: 1;
       transform: none;
       transition:
@@ -163,7 +161,7 @@
         inset: 0;
         background: radial-gradient(
             600px circle at var(--x, 50%) var(--y, 50%),
-            rgba(110,231,183,0.18),
+            rgb(110 231 183 / 18%),
             transparent 60%
         );
         opacity: 0;

@@ -12,11 +12,9 @@
     line-height: 1.6;
     color: tokens.$text-primary;
     background-color: tokens.$bg-secondary;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizelegibility;
-
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100dvh;
@@ -64,11 +62,13 @@
     background-color: rgb(28 27 27 / 30%);
     border-bottom-color: tokens.$accent-primary;
   }
+
   50% {
     backdrop-filter: blur(10px);
     background-color: rgb(28 27 27 / 90%);
     border-bottom-color: tokens.$accent-primary;
   }
+
   100% {
     backdrop-filter: blur(0);
     background-color: tokens.$bg-secondary;

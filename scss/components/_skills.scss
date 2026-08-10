@@ -13,7 +13,7 @@
       position: absolute;
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle, rgba(110, 231, 183, 0.09), transparent 65%);
+      background: radial-gradient(circle, rgb(110 231 183 / 9%), transparent 65%);
       top: -250px;
       left: -250px;
       filter: blur(90px);
@@ -35,7 +35,7 @@
       gap: t.$space-6;
       margin-bottom: 6rem;
 
-      @media (min-width: 768px) {
+      @media (width >= 768px) {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
@@ -80,8 +80,8 @@
       min-width: 0;
       padding: 2.25rem 2rem;
       border-radius: t.$radius-md;           // лучше использовать lg для таких карточек
-      background: rgba(255, 255, 255, 0.015);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgb(255 255 255 / 1.5%);
+      border: 1px solid rgb(255 255 255 / 6%);
       backdrop-filter: blur(12px);
       transition:
         transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
@@ -95,8 +95,8 @@
         inset: 0;
         background: radial-gradient(
             600px circle at var(--x, 50%) var(--y, 50%),
-            rgba(110, 231, 183, 0.22),
-            rgba(110, 231, 183, 0.06) 40%,
+            rgb(110 231 183 / 22%),
+            rgb(110 231 183 / 6%) 40%,
             transparent 70%
         );
         opacity: 0;
@@ -106,8 +106,8 @@
 
       &:hover {
         transform: translateY(-8px) scale(1.015);
-        border-color: rgba(110, 231, 183, 0.4);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        border-color: rgb(110 231 183 / 40%);
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 40%);
       }
 
       &:hover::before {
@@ -129,7 +129,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(110, 231, 183, 0.1);
+      background: rgb(110 231 183 / 10%);
       color: t.$accent-primary;
       flex-shrink: 0;
       position: relative;
@@ -139,7 +139,7 @@
         position: absolute;
         inset: -6px;
         border-radius: inherit;
-        background: currentColor;
+        background: currentcolor;
         opacity: 0.15;
         filter: blur(14px);
         z-index: -1;
@@ -184,8 +184,8 @@
       font-size: 0.8rem;
       font-weight: t.$font-weight-medium;
       color: t.$text-primary;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgb(255 255 255 / 3%);
+      border: 1px solid rgb(255 255 255 / 8%);
       overflow-wrap: anywhere;
       transition:
         transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
@@ -194,9 +194,9 @@
         border-color 0.35s cubic-bezier(0.23, 1, 0.32, 1);
 
       &:hover {
-        background: rgba(110, 231, 183, 0.1);
-        border-color: rgba(110, 231, 183, 0.45);
-        color: #fff;
+        background: rgb(110 231 183 / 10%);
+        border-color: rgb(110 231 183 / 45%);
+        color: #ffffff;
         transform: translateY(-2px);
       }
     }

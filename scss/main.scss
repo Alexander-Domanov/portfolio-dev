@@ -1,13 +1,9 @@
 @use "abstracts/_tokens" as tokens;
-
 @use "base/_reset" as reset;
 @use "base/_base" as base;
 @use "base/_typography" as typography;
-
 @use "components/index" as components;
-
 @use "utilities/_utilities" as utilities;
-
 @layer reset, base, typography, components, utilities;
 
 @layer reset {
