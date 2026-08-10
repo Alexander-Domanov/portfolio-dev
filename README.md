@@ -4,7 +4,7 @@ Static portfolio website built with HTML, SCSS, and vanilla JavaScript.
 
 ## Requirements
 
-- Node.js 18 or newer
+- Node.js ^20.19.0 or >=22.12.0
 - npm
 
 ## Setup

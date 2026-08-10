@@ -40,7 +40,7 @@
     "check:js": "eslint . --ext .js",
     "check:styles": "stylelint 'scss/**/*.scss'",
     "check:html": "htmlhint '**/*.html' --ignore 'dist/**' --format unix",
-    "check:format": "prettier --check \"*.{js,json,md,html}\" \"scss/**/*.scss\"",
+    "check:format": "prettier --check \"*.{js,json,html}\" \"README.md\" \"src/scripts/**/*.js\" \"scss/**/*.scss\"",
     "check": "npm run check:js && npm run check:styles && npm run check:html && npm run check:format",
     "fix:js": "eslint . --ext .js --fix",
     "fix:styles": "stylelint 'scss/**/*.scss' --fix",
