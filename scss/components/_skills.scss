@@ -67,6 +67,9 @@
     /* Grid */
     &__grid {
       display: grid;
+      margin: 0;
+      padding: 0;
+      list-style: none;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
       gap: 2.5rem;
     }
@@ -165,6 +168,9 @@
     &__tags {
       display: flex;
       flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
       min-width: 0;
       max-width: 100%;
       gap: 0.6rem;
