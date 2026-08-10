@@ -14,11 +14,9 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(28, 27, 27, 0.5);
-    border: 2px solid rgba(188, 202, 193, 0.5);
-    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    background-color: rgb(28 27 27 / 50%);
+    border: 2px solid rgb(188 202 193 / 50%);
     cursor: pointer;
-    justify-content: center;
     transition:
       transform 0.3s ease,
       background-color 0.3s ease,

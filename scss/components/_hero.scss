@@ -126,8 +126,15 @@
         }
       }
 
-      .top-skills { top: -20px; right: 0; }
-      .bottom-skills { bottom: -20px; left: 0; }
+      .top-skills {
+        top: -20px;
+        right: 0;
+      }
+
+      .bottom-skills {
+        bottom: -20px;
+        left: 0;
+      }
     }
 
     @keyframes float {

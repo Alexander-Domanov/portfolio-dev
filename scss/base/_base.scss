@@ -39,7 +39,7 @@
   }
 
   header.scroll-blink {
-    animation: scrollBlink 0.35s forwards;
+    animation: scroll-blink 0.35s forwards;
   }
 
   footer {
@@ -56,7 +56,7 @@
 
 }
 
-@keyframes scrollBlink {
+@keyframes scroll-blink {
   0% {
     backdrop-filter: blur(15px);
     background-color: rgb(28 27 27 / 30%);
