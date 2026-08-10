@@ -3,6 +3,9 @@
 # Dependencies
 node_modules/
 dist/
+/styles/main.css
+/styles/main.css.map
+/scss/main.css
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
