@@ -4,6 +4,7 @@
 @use "_hero" as hero;
 @use "_about" as about;
 @use "_skills" as skills;
+@use "_projects" as projects;
 @use "_contact" as contact;
 @use "_footer" as footer;
 
@@ -14,6 +15,7 @@
   @include hero.styles;
   @include about.styles;
   @include skills.styles;
+  @include projects.styles;
   @include contact.styles;
   @include footer.styles;
 }
