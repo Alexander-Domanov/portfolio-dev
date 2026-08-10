@@ -13,6 +13,8 @@ export function initAbout() {
 
   const aboutReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const supportsAboutReveal = 'IntersectionObserver' in window;
+  const aboutHover = window.matchMedia('(hover: hover)');
+  const aboutFinePointer = window.matchMedia('(pointer: fine)');
   let aboutObserver = null;
   let aboutRevealComplete = false;
   let aboutSpotlightCleanups = [];
@@ -29,13 +31,22 @@ export function initAbout() {
     aboutSpotlightCleanups = [];
 
     aboutItems.forEach(el => {
-      el.style.setProperty('--x', '50%');
-      el.style.setProperty('--y', '50%');
+      el.style.removeProperty('--x');
+      el.style.removeProperty('--y');
     });
   }
 
   function startAboutSpotlight() {
     stopAboutSpotlight();
+
+    if (
+      aboutReducedMotion.matches ||
+      !supportsAboutReveal ||
+      !aboutHover.matches ||
+      !aboutFinePointer.matches
+    ) {
+      return;
+    }
 
     aboutItems.forEach(el => {
       const handleMouseMove = (e) => {
@@ -88,17 +99,23 @@ export function initAbout() {
     aboutItems.forEach(el => aboutObserver.observe(el));
   }
 
+  function updateAboutSpotlight() {
+    startAboutSpotlight();
+  }
+
   function updateAboutMotionPreference() {
     if (aboutReducedMotion.matches || !supportsAboutReveal) {
       showAllAboutItems();
-      stopAboutSpotlight();
+      updateAboutSpotlight();
       return;
     }
 
     startAboutReveal();
-    startAboutSpotlight();
+    updateAboutSpotlight();
   }
 
   aboutReducedMotion.addEventListener('change', updateAboutMotionPreference);
+  aboutHover.addEventListener('change', updateAboutSpotlight);
+  aboutFinePointer.addEventListener('change', updateAboutSpotlight);
   updateAboutMotionPreference();
 }
