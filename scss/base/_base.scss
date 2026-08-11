@@ -24,7 +24,7 @@
     background-color: tokens.$bg-base;
   }
 
-  header {
+  #header {
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -39,7 +39,7 @@
       backdrop-filter 0.4s ease;
   }
 
-  header.scroll-blink {
+  #header.scroll-blink {
     animation: scroll-blink 0.35s forwards;
   }
 
@@ -81,17 +81,17 @@
     scroll-padding-top: calc(3.75rem + 2px);
   }
 
-  header {
+  #header {
     padding-block: 0.375rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  header {
+  #header {
     transition: none;
   }
 
-  header.scroll-blink {
+  #header.scroll-blink {
     animation: none;
   }
 }
