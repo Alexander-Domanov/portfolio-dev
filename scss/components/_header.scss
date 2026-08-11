@@ -1,46 +1,69 @@
+@use '../abstracts/_tokens' as t;
+
 @mixin styles {
   .site-header {
+    position: relative;
     display: flex;
+    min-height: 3.5rem;
     align-items: center;
     justify-content: space-between;
 
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: -1px;
+      left: 0;
+      height: 1px;
+      background: linear-gradient(90deg, t.$accent-primary, transparent 70%);
+      content: '';
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
     .menu-toggle {
       display: none;
+      min-width: 44px;
+      min-height: 44px;
       padding: 0.5rem 0.75rem;
       font: inherit;
       font-size: 0.75rem;
       font-weight: 700;
-      color: #eff1f3;
+      color: t.$text-primary;
       text-transform: uppercase;
       background: transparent;
-      border: 1px solid #6ee7b7;
-      border-radius: 0.5rem;
+      border: 1px solid t.$accent-primary;
+      border-radius: t.$radius-sm;
 
       &:focus-visible {
-        outline: 2px solid #6ee7b7;
+        outline: 2px solid t.$accent-primary;
         outline-offset: 4px;
       }
     }
 
     .hero-logo {
       position: relative;
-      display: inline-block;
+      display: inline-flex;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: flex-start;
       font-size: 1.5rem;
       font-weight: 900;
-      line-height: 2;
-      color: #6ee7b7;
-      text-shadow:
-        0 0 0 #6ee7b7,
-        0 0 0 #6ee7b7;
+      line-height: 1;
+      color: t.$accent-primary;
+      text-shadow: 0 0 0 t.$accent-primary;
       text-transform: uppercase;
-      transition: all 0.3s ease;
+      transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease,
+        transform 0.3s ease;
 
       &:hover {
+        color: t.$accent-primary;
         text-shadow:
-          0 0 6px #6ee7b7,
-          0 0 12px #6ee7b7,
-          0 0 18px #6ee7b7;
-        transform: scale(1.1);
+          0 0 6px t.$accent-primary,
+          0 0 12px t.$accent-primary;
+        transform: translateY(-1px);
       }
     }
 
@@ -48,32 +71,35 @@
       display: flex;
       font-size: 0.875rem;
       line-height: 2;
-      gap: 2rem;
+      gap: 1rem;
     }
 
     & ul li a {
       position: relative;
-      display: inline-block;
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      padding-inline: 0.25rem;
     }
 
     & ul a:hover {
-      color: #6ee7b7;
+      color: t.$accent-primary;
     }
 
     .hero-logo:focus-visible,
     & ul a:focus-visible {
       border-radius: 0.25rem;
-      outline: 2px solid #6ee7b7;
+      outline: 2px solid t.$accent-primary;
       outline-offset: 4px;
     }
 
     & ul a::after {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+      right: 0.25rem;
+      bottom: 0.35rem;
+      left: 0.25rem;
       height: 2px;
-      background-color: #6ee7b7;
+      background-color: t.$accent-primary;
       content: '';
       transform: scaleX(0);
       transform-origin: left;
@@ -91,11 +117,10 @@
       flex-wrap: wrap;
       gap: 0 0.75rem;
 
-      .resume-btn {
-        display: none;
-      }
-
       .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         margin-left: auto;
       }
 
@@ -117,12 +142,6 @@
     }
 
     .header--enhanced {
-      .menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
       nav {
         display: grid;
         grid-template-rows: 0fr;
@@ -146,6 +165,23 @@
 
     @media (prefers-reduced-motion: reduce) {
       .header--enhanced nav {
+        transition: none;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-header {
+      .hero-logo {
+        transition: none;
+
+        &:hover {
+          text-shadow: none;
+          transform: none;
+        }
+      }
+
+      ul a::after {
         transition: none;
       }
     }
