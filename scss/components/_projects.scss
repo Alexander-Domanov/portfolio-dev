@@ -2,7 +2,7 @@
 
 @mixin styles {
   .projects {
-    padding-block: clamp(4rem, 8vw, 6rem);
+    padding-block: clamp(3rem, 6vw, 4rem);
 
     &__label {
       display: block;
@@ -17,150 +17,78 @@
     }
 
     &__title {
-      margin: 0 0 3rem;
+      margin: 0 0 2rem;
       color: tokens.$text-primary;
       font-size: tokens.$font-size-section;
       font-weight: tokens.$font-weight-bold;
       line-height: 1.2;
     }
 
-    &__preview {
-      display: flex;
-      position: relative;
-      min-width: 0;
-      aspect-ratio: 16 / 10;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      padding: tokens.$space-4;
-      color: tokens.$text-primary;
-      text-align: center;
-      background: tokens.$bg-base;
-      transition: transform 0.4s ease;
-    }
-
-    &__preview::before {
-      position: absolute;
-      inset: 1rem;
-      border: 1px solid tokens.$border-subtle;
-      border-radius: tokens.$radius-md;
-      content: '';
-      pointer-events: none;
-    }
-
-    &__preview--inctagram {
-      background: tokens.$bg-base;
-    }
-
-    &__preview--inctagram::before {
-      border-color: tokens.$accent-primary;
-      box-shadow: tokens.$glow-accent;
-      opacity: 0.45;
-    }
-
-    &__preview--memory {
-      background: tokens.$bg-base;
-    }
-
-    &__preview--memory::before {
-      border-color: tokens.$text-secondary;
-      opacity: 0.55;
-    }
-
-    &__preview-window {
-      display: grid;
-      width: min(100%, 22rem);
-      min-width: 0;
-      gap: 0.5rem;
-      padding: tokens.$space-4;
-      border: 1px solid tokens.$border-accent;
-      border-radius: tokens.$radius-md;
-      background: tokens.$bg-secondary;
-      position: relative;
-      z-index: 1;
-    }
-
-    &__preview-kicker,
-    &__preview-detail {
-      color: tokens.$text-secondary;
-      font-size: 0.75rem;
-      font-weight: tokens.$font-weight-medium;
-      letter-spacing: 0.12em;
-    }
-
-    &__preview-title {
-      color: tokens.$accent-primary;
-      font-size: tokens.$font-size-card;
-      font-weight: tokens.$font-weight-bold;
-      letter-spacing: 0.08em;
-      overflow-wrap: anywhere;
-    }
-
     &__list {
       display: grid;
       margin: 0;
       padding: 0;
+      border-top: 1px solid tokens.$border-subtle;
       list-style: none;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 2rem;
     }
 
     &__item {
-      display: flex;
       min-width: 0;
+      border-bottom: 1px solid tokens.$border-subtle;
     }
 
     &__card {
-      display: flex;
-      width: 100%;
+      display: grid;
       min-width: 0;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid tokens.$border-subtle;
-      border-radius: tokens.$radius-md;
-      background: tokens.$bg-secondary;
+      gap: 1.25rem;
+      padding-block: 1.25rem;
       transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
+        border-color 0.3s ease,
+        transform 0.3s ease;
     }
 
-    &__image {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    &__content {
+    &__identity {
       display: flex;
       min-width: 0;
-      flex: 1;
-      flex-direction: column;
-      padding: tokens.$space-4;
+      align-items: flex-start;
+      gap: 1rem;
     }
 
-    &__card-title {
-      margin: 0 0 0.75rem;
-      color: tokens.$text-primary;
-      font-size: tokens.$font-size-card;
-      line-height: 1.3;
+    &__number {
+      flex: 0 0 auto;
+      color: tokens.$accent-primary;
+      font-size: 0.8rem;
+      font-weight: tokens.$font-weight-semibold;
+      letter-spacing: 0.12em;
+      line-height: 1.4;
     }
 
     &__type {
-      margin: 0 0 0.5rem;
-      color: tokens.$accent-primary;
-      font-size: 0.75rem;
+      margin: 0 0 0.35rem;
+      color: tokens.$text-secondary;
+      font-size: 0.7rem;
       font-weight: tokens.$font-weight-semibold;
       letter-spacing: 0.12em;
       line-height: 1.2;
       text-transform: uppercase;
     }
 
+    &__card-title {
+      margin: 0;
+      color: tokens.$text-primary;
+      font-size: tokens.$font-size-card;
+      line-height: 1.3;
+    }
+
+    &__details {
+      min-width: 0;
+    }
+
     &__card-description {
+      max-width: 42rem;
       margin: 0;
       color: tokens.$text-secondary;
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
     &__technologies {
@@ -168,7 +96,7 @@
       min-width: 0;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin: 1.5rem 0 0;
+      margin: 0.85rem 0 0;
       padding: 0;
       list-style: none;
     }
@@ -178,11 +106,11 @@
       min-width: 0;
       max-width: 100%;
       align-items: center;
-      padding: 0.35rem 0.6rem;
+      padding: 0.3rem 0.55rem;
       border: 1px solid tokens.$border-subtle;
       border-radius: tokens.$radius-sm;
       color: tokens.$text-secondary;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       line-height: 1.2;
       overflow-wrap: anywhere;
     }
@@ -190,9 +118,9 @@
     &__links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: auto;
-      padding-top: 1.5rem;
+      align-items: flex-start;
+      gap: 0.5rem;
+      min-width: 0;
     }
 
     &__link {
@@ -200,11 +128,11 @@
       min-height: 44px;
       align-items: center;
       justify-content: center;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.75rem;
       border: 1px solid tokens.$border-subtle;
       border-radius: tokens.$radius-sm;
       color: tokens.$text-primary;
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       font-weight: tokens.$font-weight-semibold;
       line-height: 1.2;
       transition:
@@ -213,19 +141,9 @@
         color 0.2s ease;
     }
 
-    &__link--demo {
-      border-color: tokens.$accent-primary;
-      color: tokens.$accent-primary;
-    }
-
     &__link:hover {
       border-color: tokens.$accent-primary;
       background: tokens.$bg-base;
-    }
-
-    &__link--demo:hover {
-      background: tokens.$accent-primary;
-      color: tokens.$bg-base;
     }
 
     &__link:focus-visible {
@@ -235,28 +153,49 @@
 
     &__card:hover {
       border-color: tokens.$border-accent;
-      transform: translateY(-4px);
-    }
-
-    &__card:hover &__preview {
-      transform: scale(1.03);
+      transform: translateY(-2px);
     }
 
     @media (width >= 768px) {
-      &__list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      &__card {
+        grid-template-columns: minmax(10rem, 0.8fr) minmax(0, 1fr);
+        column-gap: clamp(1.5rem, 4vw, 3rem);
+      }
+
+      &__details,
+      &__links {
+        grid-column: 2;
+      }
+    }
+
+    @media (width >= 1024px) {
+      &__card {
+        grid-template-columns:
+          minmax(12rem, 0.8fr)
+          minmax(16rem, 1.4fr)
+          minmax(12rem, 1fr)
+          auto;
+        align-items: start;
+        column-gap: clamp(1.25rem, 3vw, 2.5rem);
+      }
+
+      &__details {
+        grid-column: 2 / 4;
+      }
+
+      &__links {
+        grid-column: 4;
+        justify-content: flex-end;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
       &__card,
-      &__preview,
       &__link {
         transition: none;
       }
 
-      &__card:hover,
-      &__card:hover &__preview {
+      &__card:hover {
         transform: none;
       }
     }
