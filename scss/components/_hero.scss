@@ -62,17 +62,20 @@
       color: t.$text-primary;
       font-size: 0.85rem;
       font-weight: t.$font-weight-semibold;
+      background-color: transparent;
       transition:
         color 0.2s ease,
         background-color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+        border-color 0.2s ease;
 
       &:hover {
         border-color: t.$accent-primary;
-        background-color: t.$accent-primary;
-        color: t.$bg-base;
-        transform: translateY(-2px);
+        background-color: t.$bg-elevated;
+        color: t.$text-primary;
+      }
+
+      &:active {
+        background-color: t.$bg-elevated;
       }
 
       &:focus-visible {
@@ -201,10 +204,6 @@
     .hero__body {
       .btn-email {
         transition: none;
-
-        &:hover {
-          transform: none;
-        }
       }
     }
   }
