@@ -13,59 +13,14 @@ export function initAbout() {
 
   const aboutReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const supportsAboutReveal = 'IntersectionObserver' in window;
-  const aboutHover = window.matchMedia('(hover: hover)');
-  const aboutFinePointer = window.matchMedia('(pointer: fine)');
   let aboutObserver = null;
   let aboutRevealComplete = false;
-  let aboutSpotlightCleanups = [];
 
   function stopAboutObserver() {
     if (aboutObserver) {
       aboutObserver.disconnect();
       aboutObserver = null;
     }
-  }
-
-  function stopAboutSpotlight() {
-    aboutSpotlightCleanups.forEach((cleanup) => cleanup());
-    aboutSpotlightCleanups = [];
-
-    aboutItems.forEach((el) => {
-      el.style.removeProperty('--x');
-      el.style.removeProperty('--y');
-    });
-  }
-
-  function startAboutSpotlight() {
-    stopAboutSpotlight();
-
-    if (
-      aboutReducedMotion.matches ||
-      !supportsAboutReveal ||
-      !aboutHover.matches ||
-      !aboutFinePointer.matches
-    ) {
-      return;
-    }
-
-    aboutItems.forEach((el) => {
-      const handleMouseMove = (e) => {
-        const rect = el.getBoundingClientRect();
-        el.style.setProperty('--x', `${e.clientX - rect.left}px`);
-        el.style.setProperty('--y', `${e.clientY - rect.top}px`);
-      };
-      const handleMouseLeave = () => {
-        el.style.setProperty('--x', '50%');
-        el.style.setProperty('--y', '50%');
-      };
-
-      el.addEventListener('mousemove', handleMouseMove);
-      el.addEventListener('mouseleave', handleMouseLeave);
-      aboutSpotlightCleanups.push(() => {
-        el.removeEventListener('mousemove', handleMouseMove);
-        el.removeEventListener('mouseleave', handleMouseLeave);
-      });
-    });
   }
 
   function showAllAboutItems() {
@@ -102,23 +57,15 @@ export function initAbout() {
     aboutItems.forEach((el) => aboutObserver.observe(el));
   }
 
-  function updateAboutSpotlight() {
-    startAboutSpotlight();
-  }
-
   function updateAboutMotionPreference() {
     if (aboutReducedMotion.matches || !supportsAboutReveal) {
       showAllAboutItems();
-      updateAboutSpotlight();
       return;
     }
 
     startAboutReveal();
-    updateAboutSpotlight();
   }
 
   aboutReducedMotion.addEventListener('change', updateAboutMotionPreference);
-  aboutHover.addEventListener('change', updateAboutSpotlight);
-  aboutFinePointer.addEventListener('change', updateAboutSpotlight);
   updateAboutMotionPreference();
 }
