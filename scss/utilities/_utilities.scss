@@ -18,7 +18,6 @@
     border: 2px solid rgb(188 202 193 / 50%);
     cursor: pointer;
     transition:
-      transform 0.3s ease,
       background-color 0.3s ease,
       border-color 0.3s ease;
 
@@ -31,19 +30,15 @@
       width: 20px;
       height: 20px;
       fill: #bccac1;
-      transition:
-        fill 0.3s ease,
-        transform 0.3s ease;
+      transition: fill 0.3s ease;
     }
 
     &:hover {
       background-color: rgb(110 231 183 / 80%);
       border-color: rgb(110 231 183 / 80%);
-      transform: scale(1.2);
 
       svg {
         fill: #eff1f3;
-        transform: rotate(15deg);
       }
     }
   }
@@ -54,12 +49,6 @@
 
       svg {
         transition: none;
-      }
-
-      &,
-      &:hover,
-      &:hover svg {
-        transform: none;
       }
     }
   }
